@@ -1,6 +1,6 @@
 # Supervised Learning Algorithms
 
-## Task 1 Instructions - Linear Regression. Evaluating Regression Quality
+## Task 1 Description - Linear Regression. Evaluating Regression Quality
 1. Import the required packages.
 
 2. Load the California Housing dataset, as shown in the section  
@@ -34,7 +34,7 @@
 
  
 
-## Task 2 Instructions - Logistic Regression — Evaluating Classification Quality
+## Task 2 Description - Logistic Regression. Evaluating Classification Quality
 
 1. Import the required packages.
 
@@ -65,4 +65,37 @@
    Compare the metrics to those from the earlier section  
    *“Applying Logistic Regression. Model Training and Evaluation”*,  
    and summarize your findings.
+
+
+## Task 3 Description - kNN Regressor & SVM. Model Evaluation
+
+1. **Import the required packages.**
+
+2. **Load the datasets:**
+   - `mod_04_hw_train_data.csv` — training data.
+   - `mod_04_hw_valid_data.csv` — validation data.
+   - The target variable is `Salary`.
+
+3. **Perform exploratory data analysis (EDA):**
+   - Assess the completeness, data types, and distributions of all features.
+   - Analyze the usefulness and relevance of the available features.
+
+4. **Preprocess the data:**
+   - Handle missing values.
+   - Convert `Date_Of_Birth` to age.
+   - Drop irrelevant columns (`Name`, `Phone_Number`, `Date_Of_Birth`).
+   - Apply scaling to numeric features using `StandardScaler`.
+   - Encode categorical features using `TargetEncoder`.
+
+5. **Train a model using `KNeighborsRegressor` from `sklearn`:**
+   - Tune hyperparameters via `GridSearchCV`.
+
+6. **Repeat data preparation steps for the validation set.**
+
+7. **Make predictions on the validation set:**
+   - Evaluate model accuracy using `mean_absolute_percentage_error`.
+
+8. **Build and evaluate an additional model using `SVR` (Support Vector Regression).**
+   - Tune hyperparameters (`C`, `kernel`, `degree`) via `GridSearchCV`.
+   - Compare the performance of SVM to kNN.
 
