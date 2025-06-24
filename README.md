@@ -1,29 +1,33 @@
-Supervised Learning Algorithms – Part 1
+# Supervised Learning Algorithms
 
-This repository demonstrates the implementation of a supervised learning workflow using the California Housing dataset. The following steps outline the process:
-Steps Completed
+## Task Instructions (Linear_Regression.Evaluating_Regression_Quality.py)
+1. Import the required packages.
 
-Import Required Libraries
-Imported necessary libraries such as pandas, numpy, scipy, and sklearn for data handling, analysis, and model building.
-Load Dataset
-The California Housing dataset was loaded for regression analysis.
-Exploratory Data Analysis (EDA) was performed previously and is not repeated here.
-Data Preprocessing
-Outlier Removal:
-Identified and removed outliers from the AveRooms, AveBedrms, AveOccup, and Population columns using zscore() from scipy.
-Applied apply() to calculate Z-scores and removed rows where any value exceeded the threshold using any().
-Feature Selection:
-Removed one highly correlated feature based on the correlation matrix.
-Split Data
-Divided the dataset into training and testing subsets using train_test_split() from sklearn.
-Feature Normalization
-Standardized feature values using StandardScaler from sklearn.
-Model Building
-Constructed a regression model using the LinearRegression class from sklearn.
-Model Evaluation
-Calculated the following performance metrics:
-R-squared (R²): Coefficient of determination.
-MAE: Mean Absolute Error.
-MAPE: Mean Absolute Percentage Error.
-Comparison and Conclusion
-Compared the performance metrics of the current model with those from a previous implementation and documented the observations.
+2. Load the California Housing dataset, as shown in the section  
+   *“Applying Linear Regression. EDA of the California Housing dataset”*  
+   from the topic *“Linear Regression. Evaluating Regression Quality”*.
+
+3. Perform data preprocessing:
+
+   - **3.1. Outlier removal**  
+     Remove outliers in the columns: `AveRooms`, `AveBedrms`, `AveOccup`, `Population`.  
+     Use `scipy.stats.zscore()` and `pandas.DataFrame.apply()` to compute z-scores.  
+     Drop rows where at least one of these columns contains an outlier (e.g., z > 3), using `any()`.
+
+   - **3.2. Remove one highly correlated feature**  
+     Use the correlation matrix and drop one feature from a highly correlated pair.
+
+4. Split the dataset into training and testing sets using `train_test_split()` from `sklearn`.
+
+5. Normalize features using `StandardScaler` from `sklearn`.
+
+6. Build a model using `LinearRegression` from `sklearn`.
+
+7. Evaluate model performance using:
+   - R² (coefficient of determination)
+   - MAE (Mean Absolute Error)
+   - MAPE (Mean Absolute Percentage Error)
+
+8. Compare the new metrics with those from the section  
+   *“Evaluating Model Accuracy”* in the topic *“Linear Regression. Evaluating Regression Quality”*.  
+   Draw conclusions.
